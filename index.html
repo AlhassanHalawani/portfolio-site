@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alhassan — Portfolio</title>
+  <meta name="description" content="Portfolio of Alhassan — Developer, maker, and security enthusiast." />
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.png" />
+</head>
+<body class="theme-auto">
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#" class="logo">Alhassan<span>.</span></a>
+      <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
+      <a href="#contact" class="btn">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="parallax" aria-hidden="true">
+        <div class="dot" style="--x: 10; --y: -8;"></div>
+        <div class="dot" style="--x: -6; --y: 12;"></div>
+        <div class="dot" style="--x: 18; --y: 6;"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="split">
+          Building reliable systems on <span class="accent">k3s</span><br />
+          and shipping fun, interactive UIs.
+        </h1>
+        <p class="lead">
+          Raspberry Pi clusters, Home Assistant, security tools, and web apps.
+          I like making useful things that feel great to use.
+        </p>
+        <div class="cta">
+          <a href="#projects" class="btn btn-primary">See projects</a>
+          <a href="#about" class="btn btn-ghost">About me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container">
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <h3>k3s Portfolio Hosting</h3>
+          <p>Static site on Nginx behind cert-manager & Cloudflare DDNS.</p>
+          <a class="chip" href="#" aria-disabled="true">Case study soon</a>
+        </article>
+        <article class="card reveal">
+          <h3>Home Assistant Dashboard</h3>
+          <p>Energy, media, and alerts with custom cards and automations.</p>
+          <a class="chip" href="#" aria-disabled="true">Screenshots</a>
+        </article>
+        <article class="card reveal">
+          <h3>Raspberry Pi IDS</h3>
+          <p>Snort + Flask alerts; anomaly detection on home traffic.</p>
+          <a class="chip" href="#" aria-disabled="true">Write-up</a>
+        </article>
+        <article class="card reveal">
+          <h3>Clikkey Product Page</h3>
+          <p>Scroll-driven animation for keyboard switch internals.</p>
+          <a class="chip" href="#" aria-disabled="true">Demo</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <h2 class="section-title reveal">About</h2>
+      <p class="reveal">
+        I’m an electronics tech & security enthusiast. I build on Raspberry Pi clusters,
+        automate with Home Assistant, and tinker with network tooling. I like performant,
+        maintainable code and UIs with tasteful motion.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+      <h2 class="section-title reveal">Contact</h2>
+      <p class="reveal">
+        For now, contact links go here (email, GitHub, LinkedIn). A proper contact form
+        will be added later via a backend microservice (coming in a future step).
+      </p>
+      <div class="links reveal">
+        <a class="btn" href="mailto:you@example.com">Email me</a>
+        <a class="btn btn-ghost" href="https://github.com/youruser" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Alhassan. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
