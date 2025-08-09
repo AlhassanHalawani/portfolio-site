@@ -1,12 +1,29 @@
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"portfolio","namespace":"portfolio"},"spec":{"ports":[{"port":80,"targetPort":8080}],"selector":{"app":"portfolio"},"type":"ClusterIP"}}
+  creationTimestamp: "2025-08-09T12:50:03Z"
   name: portfolio
   namespace: portfolio
+  resourceVersion: "14957692"
+  uid: 7b13a5e5-ff7f-4064-b6aa-fc713f659b14
 spec:
-  type: ClusterIP
+  clusterIP: 10.43.223.50
+  clusterIPs:
+  - 10.43.223.50
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
   selector:
     app: portfolio
-  ports:
-    - port: 80
-      targetPort: 8080
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
