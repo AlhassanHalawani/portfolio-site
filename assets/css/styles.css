@@ -23,15 +23,36 @@ body{
 }
 
 .container{width:min(1100px,92%); margin-inline:auto}
+
+/* Header */
 .site-header{position:sticky; top:0; backdrop-filter: blur(10px); background:color-mix(in srgb, var(--bg) 85%, transparent); border-bottom:1px solid var(--border); z-index:50}
-.nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 0}
+.nav{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1rem; padding:.75rem 0}
 .logo{font-weight:800; text-decoration:none; color:var(--text); letter-spacing:.3px}
 .logo span{color:var(--accent)}
+.nav-center{justify-self:center}
+.nav-right{justify-self:end; display:flex; align-items:center; gap:.5rem}
 .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1rem; border-radius:999px; border:1px solid var(--border); color:var(--text); text-decoration:none; transition:transform .2s ease, background .2s ease}
 .btn:hover{transform:translateY(-1px); background:color-mix(in srgb, var(--card) 80%, transparent)}
 .btn-ghost{background:transparent}
 .btn-primary{background:linear-gradient(90deg, var(--accent), var(--brand)); border:none; color:#0b0d10}
 
+/* Nav links */
+.nav-links{display:flex; gap:.5rem; align-items:center}
+.nav-links a{padding:.4rem .8rem; border-radius:10px; text-decoration:none; color:var(--text); opacity:.9; border:1px solid transparent}
+.nav-links a:hover{background:color-mix(in srgb, var(--card) 80%, transparent)}
+.nav-links a.is-active{border-color:var(--border); background:color-mix(in srgb, var(--card) 85%, transparent)}
+
+/* Mobile menu */
+.burger{display:none; background:transparent; border:1px solid var(--border); border-radius:12px; padding:.5rem}
+@media (max-width: 780px){
+  .nav{grid-template-columns:auto 1fr auto}
+  .burger{display:inline-flex}
+  .nav-links{position:fixed; top:60px; right:1rem; background:var(--card); border:1px solid var(--border); padding:.5rem; border-radius:14px; box-shadow: 0 8px 24px color-mix(in srgb, #000 20%, transparent); display:none; flex-direction:column; min-width: 200px}
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%}
+}
+
+/* Hero */
 .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center; min-height:70svh; padding:3rem 0; position:relative; overflow:hidden}
 .hero-content h1{font-size: clamp(2rem, 4vw + 1rem, 3.2rem); line-height:1.1; margin:0 0 1rem}
 .hero .lead{color:var(--muted); margin:0 0 1.5rem}
@@ -81,5 +102,3 @@ html { scroll-behavior: smooth }
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important; transition:none!important}
 }
-
-
