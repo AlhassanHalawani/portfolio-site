@@ -15,23 +15,37 @@
   <main class="container" tabindex="-1" aria-live="polite">
     <section class="section">
       <h2 class="section-title reveal">Projects</h2>
-      <div class="grid">
 
-        <article class="card reveal">
+      <!-- Filter/Search Bar -->
+      <div class="proj-controls reveal" role="region" aria-label="Project filters">
+        <div class="chipbar" role="tablist" aria-label="Filter by tag">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="k3s" role="tab">k3s</button>
+          <button class="chip" data-filter="home-assistant" role="tab">Home Assistant</button>
+          <button class="chip" data-filter="snort" role="tab">Snort</button>
+          <button class="chip" data-filter="wireguard" role="tab">WireGuard</button>
+        </div>
+        <label class="search">
+          <input type="search" id="projSearch" placeholder="Search projects…" aria-label="Search projects">
+        </label>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <article class="card reveal" data-tags="k3s,nginx,ghcr" data-year="2025">
           <a class="card-media" href="/projects/k3s-portfolio.html" aria-label="k3s Portfolio Hosting">
             <img loading="lazy" src="/assets/img/kub.png" alt="Kubernetes logo for k3s portfolio project">
           </a>
           <div class="card-body">
             <h3><a href="/projects/k3s-portfolio.html">k3s Portfolio Hosting</a></h3>
             <p class="muted">2025 · Nginx, k3s, GHCR</p>
-            <p>Deployed on Raspberry Pi 5 cluster with Nginx Ingress, cert‑manager, and Cloudflare DDNS script.</p>
+            <p>Deployed on Raspberry Pi 5 cluster with Nginx Ingress, cert-manager, and Cloudflare DDNS script.</p>
             <div class="links">
               <a class="chip" href="/projects/k3s-portfolio.html">Case study</a>
             </div>
           </div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="home-assistant,dashboard,charts" data-year="2024">
           <a class="card-media" href="/projects/home-assistant-dashboard.html" aria-label="Home Assistant Dashboard">
             <img loading="lazy" src="/assets/img/HS.png" alt="Home Assistant logo for dashboard project">
           </a>
@@ -45,7 +59,7 @@
           </div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="snort,ids,flask,home-assistant" data-year="2024">
           <a class="card-media" href="/projects/pi-ids.html" aria-label="Raspberry Pi IDS">
             <img loading="lazy" src="/assets/img/snort.png" alt="Snort logo for IDS project">
           </a>
@@ -54,12 +68,12 @@
             <p class="muted">2024 · Snort, Flask, HA</p>
             <p>Snort + Flask + HA integration. Python log analyzer flags anomalies & suspicious IPs.</p>
             <div class="links">
-              <a class="chip" href="/projects/pi-ids.html">Write‑up</a>
+              <a class="chip" href="/projects/pi-ids.html">Write-up</a>
             </div>
           </div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" data-tags="wireguard,cloudflare,vpn,ddns" data-year="2023">
           <a class="card-media" href="/projects/vpn-ddns.html" aria-label="VPN with DDNS">
             <img loading="lazy" src="/assets/img/WireGuard.png" alt="WireGuard logo for VPN project">
           </a>
@@ -72,7 +86,6 @@
             </div>
           </div>
         </article>
-
       </div>
     </section>
   </main>
@@ -80,5 +93,6 @@
   <div id="site-footer"></div>
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/projects-filter.js" defer></script>
 </body>
 </html>

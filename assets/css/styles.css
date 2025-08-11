@@ -130,3 +130,50 @@ html { scroll-behavior: smooth }
   margin: 0 auto;
 }
 
+/* Projects filter/search */
+.proj-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: .5rem 0 1.25rem;
+}
+.chipbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.chipbar .chip {
+  cursor: pointer;
+  user-select: none;
+}
+.chipbar .chip.is-active {
+  border-style: solid;
+}
+.search input {
+  padding: .5rem .75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  width: 220px;
+}
+@media (max-width: 720px) {
+  .proj-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search input {
+    width: 100%;
+  }
+}
+
+/* Ensure project thumbs are uniform */
+.card-media img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  max-height: 180px;
+  margin: 0 auto;
+}
