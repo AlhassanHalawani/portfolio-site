@@ -8,20 +8,77 @@
   <link rel="preload" href="/assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="icon" href="/public/favicon.png" />
-
 </head>
 <body class="theme-auto">
   <div id="site-header"></div>
-  <main class="container" tabindex="-1" aria-live="polite">
-<section class="section">
-  <h2 class="section-title reveal">Projects</h2>
-  <div id="projects-list" class="grid"></div>
-</section>
 
+  <main class="container" tabindex="-1" aria-live="polite">
+    <section class="section">
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="grid">
+
+        <article class="card reveal">
+          <a class="card-media" href="/projects/k3s-portfolio.html" aria-label="k3s Portfolio Hosting">
+            <img loading="lazy" src="/assets/img/kub.png" alt="Kubernetes logo for k3s portfolio project">
+          </a>
+          <div class="card-body">
+            <h3><a href="/projects/k3s-portfolio.html">k3s Portfolio Hosting</a></h3>
+            <p class="muted">2025 · Nginx, k3s, GHCR</p>
+            <p>Deployed on Raspberry Pi 5 cluster with Nginx Ingress, cert‑manager, and Cloudflare DDNS script.</p>
+            <div class="links">
+              <a class="chip" href="/projects/k3s-portfolio.html">Case study</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-media" href="/projects/home-assistant-dashboard.html" aria-label="Home Assistant Dashboard">
+            <img loading="lazy" src="/assets/img/HS.png" alt="Home Assistant logo for dashboard project">
+          </a>
+          <div class="card-body">
+            <h3><a href="/projects/home-assistant-dashboard.html">Home Assistant Dashboard</a></h3>
+            <p class="muted">2024 · Home Assistant, Charts</p>
+            <p>Energy overview, media center, IDS alerts, and automations. Built with custom cards.</p>
+            <div class="links">
+              <a class="chip" href="/projects/home-assistant-dashboard.html">Screenshots & notes</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-media" href="/projects/pi-ids.html" aria-label="Raspberry Pi IDS">
+            <img loading="lazy" src="/assets/img/snort.png" alt="Snort logo for IDS project">
+          </a>
+          <div class="card-body">
+            <h3><a href="/projects/pi-ids.html">Raspberry Pi IDS</a></h3>
+            <p class="muted">2024 · Snort, Flask, HA</p>
+            <p>Snort + Flask + HA integration. Python log analyzer flags anomalies & suspicious IPs.</p>
+            <div class="links">
+              <a class="chip" href="/projects/pi-ids.html">Write‑up</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a class="card-media" href="/projects/vpn-ddns.html" aria-label="VPN with DDNS">
+            <img loading="lazy" src="/assets/img/WireGuard.png" alt="WireGuard logo for VPN project">
+          </a>
+          <div class="card-body">
+            <h3><a href="/projects/vpn-ddns.html">VPN with DDNS</a></h3>
+            <p class="muted">2023 · WireGuard, Cloudflare</p>
+            <p>WireGuard + Cloudflare API keeps hostname reachable through IP changes.</p>
+            <div class="links">
+              <a class="chip" href="/projects/vpn-ddns.html">Setup guide</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
   </main>
+
   <div id="site-footer"></div>
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js" defer></script>
-<script src="/assets/js/projects.js"></script>
 </body>
 </html>
