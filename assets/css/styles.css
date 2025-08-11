@@ -102,3 +102,19 @@ html { scroll-behavior: smooth }
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important; transition:none!important}
 }
+/* layout & grid */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+.grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+/* header/footer */
+.site-header, .site-footer { padding: 1rem 2rem; }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.menu { display: flex; list-style: none; gap: 1rem; margin: 0; padding: 0; }
+.menu a.active { text-decoration: underline; }
+
+/* cards */
+.card { border: 1px solid rgba(0,0,0,.1); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,.02); }
+.card-media img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.card-body { padding: 1rem; }
+.muted { opacity: .7; font-size: .9rem; }
+.btn { display: inline-block; padding: .5rem .75rem; border: 1px solid rgba(0,0,0,.2); border-radius: 8px; text-decoration: none; }
