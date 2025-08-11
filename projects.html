@@ -1,74 +1,54 @@
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Projects — Alhassan</title>
-      <meta name="description" content="Portfolio of Alhassan — Developer, maker, and security enthusiast." />
-      <link rel="preload" href="/assets/css/styles.css" as="style" />
-      <link rel="stylesheet" href="/assets/css/styles.css" />
-      <link rel="icon" href="/assets/img/favicon.png" />
-    </head>
-    <body class="theme-auto">
-      <header class="site-header">
-  <nav class="nav container" aria-label="Main">
-    <a href="/index.html" class="logo">Alhassan<span>.</span></a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Alhassan</title>
+  <meta name="description" content="Portfolio of Alhassan — Developer, maker, and security enthusiast." />
+  <link rel="preload" href="/assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/public/favicon.png" />
 
-    <div class="nav-center">
-      <div id="navLinks" class="nav-links" role="menu">
-        <a href="/index.html" role="menuitem">Home</a>
-        <a href="/projects.html" role="menuitem">Projects</a>
-        <a href="/pages/about.html" role="menuitem">About</a>
-        <a href="/pages/contact.html" role="menuitem">Contact</a>
+</head>
+<body class="theme-auto">
+  <div id="site-header"></div>
+  <main class="container" tabindex="-1" aria-live="polite">
+    <section class="section">
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <h3>k3s Portfolio Hosting</h3>
+          <p>Deployed on Raspberry Pi 5 cluster with Nginx Ingress, cert-manager, and Cloudflare DDNS script.</p>
+          <div class="links">
+            <a class="chip" href="/projects/k3s-portfolio.html">Case study</a>
+          </div>
+        </article>
+        <article class="card reveal">
+          <h3>Home Assistant Dashboard</h3>
+          <p>Energy overview, media center, IDS alerts, and automations. Built with custom cards.</p>
+          <div class="links">
+            <a class="chip" href="/projects/home-assistant-dashboard.html">Screenshots & notes</a>
+          </div>
+        </article>
+        <article class="card reveal">
+          <h3>Raspberry Pi IDS</h3>
+          <p>Snort + Flask + HA integration. Python log analyzer flags anomalies & suspicious IPs.</p>
+          <div class="links">
+            <a class="chip" href="/projects/pi-ids.html">Write-up</a>
+          </div>
+        </article>
+        <article class="card reveal">
+          <h3>VPN with DDNS</h3>
+          <p>WireGuard + Cloudflare API keeps hostname reachable through IP changes.</p>
+          <div class="links">
+            <a class="chip" href="/projects/vpn-ddns.html">Setup guide</a>
+          </div>
+        </article>
       </div>
-    </div>
-
-    <div class="nav-right">
-      <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
-      <button id="burger" class="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    </div>
-  </nav>
-</header>
-      <main class="container" tabindex="-1" aria-live="polite">
-
-<section class="section">
-  <h2 class="section-title reveal">Projects</h2>
-  <div class="grid">
-    <article class="card reveal">
-      <h3>k3s Portfolio Hosting</h3>
-      <p>Deployed on Raspberry Pi 5 cluster with Nginx Ingress, cert-manager, and Cloudflare DDNS script.</p>
-      <div class="links">
-        <a class="chip" href="/projects/k3s-portfolio.html">Case study</a>
-      </div>
-    </article>
-    <article class="card reveal">
-      <h3>Home Assistant Dashboard</h3>
-      <p>Energy overview, media center, IDS alerts, and automations. Built with custom cards.</p>
-      <div class="links">
-        <a class="chip" href="/projects/home-assistant-dashboard.html">Screenshots & notes</a>
-      </div>
-    </article>
-    <article class="card reveal">
-      <h3>Raspberry Pi IDS</h3>
-      <p>Snort + Flask + HA integration. Python log analyzer flags anomalies & suspicious IPs.</p>
-      <div class="links">
-        <a class="chip" href="/projects/pi-ids.html">Write-up</a>
-      </div>
-    </article>
-    <article class="card reveal">
-      <h3>VPN with DDNS</h3>
-      <p>WireGuard + Cloudflare API keeps hostname reachable through IP changes.</p>
-      <div class="links">
-        <a class="chip" href="/projects/vpn-ddns.html">Setup guide</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-      </main>
-      <footer class="site-footer container">
-  <p>© <span id="year"></span> Alhassan. All rights reserved.</p>
-</footer>
-      <script src="/assets/js/main.js" defer></script>
-    </body>
-    </html>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,11 +1,18 @@
 <header class="site-header">
-  <nav class="nav">
-    <a href="/" class="logo">Alhassan</a>
-    <ul class="menu">
-      <li><a href="/projects.html">Projects</a></li>
-      <li><a href="/pages/about.html">About</a></li>
-      <li><a href="/pages/contact.html">Contact</a></li>
-      <li><a href="/pages/blog.html">Blog</a></li>
-    </ul>
+  <nav class="nav container" aria-label="Main">
+    <a href="/" class="logo">Alhassan<span>.</span></a>
+    <div class="nav-center">
+      <div id="navLinks" class="nav-links" role="menu">
+        <a href="/" role="menuitem">Home</a>
+        <a href="/projects.html" role="menuitem">Projects</a>
+        <a href="/pages/about.html" role="menuitem">About</a>
+        <a href="/pages/contact.html" role="menuitem">Contact</a>
+        <a href="/pages/blog.html" role="menuitem">Blog</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
+      <button id="burger" class="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </nav>
 </header>
