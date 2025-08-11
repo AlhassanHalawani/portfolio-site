@@ -13,6 +13,7 @@
   body.theme-auto { --bg:#f8fafc; --bg2:#ffffff; --text:#0b1020; --muted:#5b6470; --card:#ffffff; --border:#e6eaf0; }
 }
 body.theme-light { --bg:#f8fafc; --bg2:#ffffff; --text:#0b1020; --muted:#5b6470; --card:#ffffff; --border:#e6eaf0; }
+body.theme-dark  { /* keep defaults */ }
 
 *{box-sizing:border-box}
 html,body{height:100%}
