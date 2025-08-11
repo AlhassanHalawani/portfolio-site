@@ -118,3 +118,13 @@ html { scroll-behavior: smooth }
 .card-body { padding: 1rem; }
 .muted { opacity: .7; font-size: .9rem; }
 .btn { display: inline-block; padding: .5rem .75rem; border: 1px solid rgba(0,0,0,.2); border-radius: 8px; text-decoration: none; }
+
+.card-media img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: contain; /* or "cover" if you want full bleed */
+  max-height: 180px; /* keeps them from dominating the card */
+  margin: 0 auto;
+}
+
