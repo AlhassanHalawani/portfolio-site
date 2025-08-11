@@ -38,7 +38,7 @@ body{
 
 /* Nav links */
 .nav-links{display:flex; gap:.5rem; align-items:center}
-.nav-links a{padding:.4rem .8rem; border-radius:10px; text-decoration:none; color:var(--text); opacity:.9; border:1px solid transparent}
+.nav-links a{padding:.4rem .9rem; border-radius:10px; text-decoration:none; color:var(--text); opacity:.9; border:1px solid transparent}
 .nav-links a:hover{background:color-mix(in srgb, var(--card) 80%, transparent)}
 .nav-links a.is-active{border-color:var(--border); background:color-mix(in srgb, var(--card) 85%, transparent)}
 
