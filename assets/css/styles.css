@@ -119,8 +119,10 @@ html { scroll-behavior: smooth }
 .muted { opacity: .7; font-size: .9rem; }
 .btn { display: inline-block; padding: .5rem .75rem; border: 1px solid rgba(0,0,0,.2); border-radius: 8px; text-decoration: none; }
 
+
+
 .card-media img {
-  width: 100%;
+  width: 50%;
   display: block;
   aspect-ratio: 16/9;
   object-fit: contain; /* or "cover" if you want full bleed */
