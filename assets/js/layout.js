@@ -16,16 +16,14 @@
   // Year in footer
   const y = document.querySelector("#year"); if (y) y.textContent = new Date().getFullYear();
 
-  // After a tick (to allow header injection), set active nav link
-  setTimeout(() => {
-    const here = location.pathname.replace(/\/+$/, "") || "/";
+  // Mark active link
+  const markActive = () => {
+    const here = location.pathname.replace(/\/+$|index\.html$/g, "") || "/";
     document.querySelectorAll(".nav a").forEach(a => {
-      const target = (a.getAttribute("href") || "").replace(/\/+$/, "") || "/";
-      if (target === here) a.classList.add("is-active");
-      // also mark section parents (e.g., /projects.html for /projects/... pages)
-      if (target !== "/" && here.startsWith(target.replace(".html",""))) {
-        a.classList.add("is-active");
-      }
+      const target = (a.getAttribute("href") || "").replace(/\/+$|index\.html$/g, "") || "/";
+      a.classList.toggle("is-active", here === target || (target !== "/" && here.startsWith(target)));
     });
-  }, 0);
+  };
+  // Wait a tick to run after injection
+  setTimeout(markActive, 0);
 })();
