@@ -8,16 +8,29 @@
   <link rel="preload" href="/assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="icon" href="/public/favicon.png" />
-
 </head>
 <body class="theme-auto">
   <div id="site-header"></div>
   <main class="container" tabindex="-1" aria-live="polite">
-<section class="section">
-  <h2 class="section-title reveal">Raspberry Pi IDS</h2>
-  <p class="reveal">Snort + Flask dashboard with Home Assistant integration. Python analyzer flags unusual traffic and suspicious IPs.</p>
-  <p class="reveal"><a class="chip" href="/projects.html">← Back to projects</a></p>
-</section>
+
+    <section class="section project-hero">
+      <div class="card-media" style="max-width:500px;margin:0 auto 1rem">
+        <img loading="lazy" src="/assets/img/snort.png" alt="Snort logo for IDS project">
+      </div>
+      <h2 class="section-title reveal" style="text-align:center">Raspberry Pi IDS</h2>
+      <p class="reveal" style="text-align:center;max-width:720px;margin:0 auto">
+        Snort + Flask dashboard with Home Assistant integration. Python analyzer flags unusual traffic and suspicious IPs.
+      </p>
+    </section>
+
+    <section class="section">
+      <ul class="reveal">
+        <li>Snort running on Pi; logs parsed by custom Python.</li>
+        <li>Flask UI for alerts; HA receives critical notifications.</li>
+        <li>Future: model-based anomaly scoring.</li>
+      </ul>
+      <p class="reveal"><a class="chip" href="/projects.html">← Back to projects</a></p>
+    </section>
 
   </main>
   <div id="site-footer"></div>
