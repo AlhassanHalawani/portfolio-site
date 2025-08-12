@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Alhassan — Notes</title>
+    <link>https://YOUR_DOMAIN_HERE/</link>
+    <description>Blog posts and notes</description>
+    <language>en</language>
+
+    <item>
+      <title>Getting started with k3s on Raspberry Pi 5</title>
+      <link>https://YOUR_DOMAIN_HERE/blog/hello-k3s.html</link>
+      <guid>https://YOUR_DOMAIN_HERE/blog/hello-k3s.html</guid>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <description>Notes on installing k3s, setting up Nginx Ingress, and wiring cert-manager with Cloudflare.</description>
+    </item>
+
+    <item>
+      <title>WireGuard + Dynamic DNS: practical tips</title>
+      <link>https://YOUR_DOMAIN_HERE/blog/wireguard-ddns-tips.html</link>
+      <guid>https://YOUR_DOMAIN_HERE/blog/wireguard-ddns-tips.html</guid>
+      <pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate>
+      <description>A few gotchas when keeping a stable VPN endpoint while your IP changes.</description>
+    </item>
+  </channel>
+</rss>

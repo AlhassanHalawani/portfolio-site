@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Alhassan</title>
+  <meta name="description" content="Notes and updates on k3s, Home Assistant, and network tooling." />
+
+  <link rel="canonical" href="https://YOUR_DOMAIN_HERE/pages/blog.html" />
+  <link rel="manifest" href="/public/manifest.webmanifest">
+  <meta name="theme-color" content="#0b0d10">
+
+  <meta property="og:title" content="Blog — Alhassan" />
+  <meta property="og:description" content="Notes and updates on k3s, Home Assistant, and network tooling." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_DOMAIN_HERE/pages/blog.html" />
+  <meta property="og:image" content="https://YOUR_DOMAIN_HERE/public/icons/icon-512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="/assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/public/favicon.png" />
+</head>
+<body class="theme-auto">
+  <div id="site-header"></div>
+
+  <main class="container" tabindex="-1" aria-live="polite">
+    <section class="section">
+      <h1 class="section-title reveal">Blog / Notes</h1>
+
+      <div class="proj-controls reveal" role="region" aria-label="Post filters">
+        <div class="chipbar" id="tagBar" role="tablist" aria-label="Filter by tag">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        </div>
+        <label class="search">
+          <input type="search" id="postSearch" placeholder="Search posts…" aria-label="Search posts">
+        </label>
+      </div>
+
+      <div class="grid" id="postGrid"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/blog.js" defer></script>
+</body>
+</html>

@@ -1,3 +1,8 @@
+# robots.txt for Alhassan — Portfolio
 User-agent: *
 Allow: /
-Sitemap: https://your-domain.example/sitemap.xml
+
+# Block temp URLs (none for now). Add disallows as needed.
+# Disallow: /admin/
+
+Sitemap: https://YOUR_DOMAIN_HERE/sitemap.xml

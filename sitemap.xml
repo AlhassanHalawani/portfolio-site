@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR_DOMAIN_HERE/</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/projects.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/pages/about.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/pages/contact.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/pages/blog.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/pages/cv.html</loc></url>
+
+  <url><loc>https://YOUR_DOMAIN_HERE/projects/k3s-portfolio.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/projects/home-assistant-dashboard.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/projects/pi-ids.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/projects/vpn-ddns.html</loc></url>
+
+  <url><loc>https://YOUR_DOMAIN_HERE/blog/hello-k3s.html</loc></url>
+  <url><loc>https://YOUR_DOMAIN_HERE/blog/wireguard-ddns-tips.html</loc></url>
+</urlset>

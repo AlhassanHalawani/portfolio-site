@@ -2,25 +2,7 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Theme toggle: auto/light/dark cycle
-const body = document.body;
-const key = "themePref"; // "auto" | "light" | "dark"
-const themeBtn = document.getElementById("themeToggle");
-const cycle = { "theme-auto": "theme-light", "theme-light": "theme-dark", "theme-dark": "theme-auto" };
-
-function applyTheme(pref) {
-  body.classList.remove("theme-auto", "theme-light", "theme-dark");
-  body.classList.add(pref);
-}
-applyTheme(localStorage.getItem(key) || "theme-auto");
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    const current = [...body.classList].find(c => c.startsWith("theme-")) || "theme-auto";
-    const next = cycle[current] || "theme-auto";
-    applyTheme(next);
-    localStorage.setItem(key, next);
-  });
-}
+// Theme toggle is initialized in layout.js AFTER header injection.
 
 // Mobile menu toggle
 const burger = document.getElementById("burger");
@@ -32,7 +14,7 @@ if (burger && navLinks) {
   });
 }
 
-// Active link based on current page
+// Active link based on current page (kept for non-partial pages)
 (function setActive() {
   const path = (location.pathname.split('/').pop() || "index.html").toLowerCase();
   document.querySelectorAll('.nav-links a').forEach(a => {
@@ -87,3 +69,11 @@ document.addEventListener("click", (e) => {
     });
   }
 });
+
+// --- NEW: Register Service Worker for PWA + offline
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js", { scope: "/" })
+      .catch(err => console.warn("SW register failed:", err));
+  });
+}

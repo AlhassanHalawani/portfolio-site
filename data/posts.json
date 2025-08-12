@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "hello-k3s",
+    "title": "Getting started with k3s on Raspberry Pi 5",
+    "date": "2025-08-01",
+    "tags": ["k3s", "Raspberry Pi", "Nginx"],
+    "summary": "Notes on installing k3s, setting up Nginx Ingress, and wiring cert-manager with Cloudflare.",
+    "image": "/assets/img/kub.png",
+    "url": "/blog/hello-k3s.html"
+  },
+  {
+    "slug": "wireguard-ddns-tips",
+    "title": "WireGuard + Dynamic DNS: practical tips",
+    "date": "2025-07-20",
+    "tags": ["WireGuard", "Cloudflare", "DDNS"],
+    "summary": "A few gotchas when keeping a stable VPN endpoint while your IP changes.",
+    "image": "/assets/img/WireGuard.png",
+    "url": "/blog/wireguard-ddns-tips.html"
+  }
+]

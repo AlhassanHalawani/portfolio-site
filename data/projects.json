@@ -4,35 +4,35 @@
     "title": "K3s-Hosted Portfolio",
     "summary": "Containerized static site on a Raspberry Pi 5 k3s cluster with Nginx and Ingress.",
     "year": 2025,
-    "stack": ["Nginx","k3s","GHCR"],
+    "stack": ["Nginx", "k3s", "GHCR"],
     "url": "/projects/k3s-portfolio.html",
-    "image": "/public/images/k3s-portfolio/cover.jpg"
+    "image": "/assets/img/kub.png"
   },
   {
     "slug": "pi-ids",
     "title": "Home Network IDS",
     "summary": "Raspberry Pi IDS with Snort + Home Assistant alerts and a Flask dashboard.",
     "year": 2024,
-    "stack": ["Snort","HA","Flask","Pi 4"],
+    "stack": ["Snort", "HA", "Flask", "Pi 4"],
     "url": "/projects/pi-ids.html",
-    "image": "/public/images/pi-ids/cover.jpg"
+    "image": "/assets/img/snort.png"
   },
   {
     "slug": "home-assistant-dashboard",
     "title": "Home Assistant Dashboard",
     "summary": "Custom visual dashboards, energy charts, and automations.",
     "year": 2024,
-    "stack": ["Home Assistant","Charts"],
+    "stack": ["Home Assistant", "Charts"],
     "url": "/projects/home-assistant-dashboard.html",
-    "image": "/public/images/home-assistant-dashboard/cover.jpg"
+    "image": "/assets/img/HS.png"
   },
   {
     "slug": "vpn-ddns",
     "title": "VPN + Dynamic DNS",
     "summary": "WireGuard with Cloudflare API updates for resilient remote access.",
     "year": 2023,
-    "stack": ["WireGuard","Cloudflare"],
+    "stack": ["WireGuard", "Cloudflare"],
     "url": "/projects/vpn-ddns.html",
-    "image": "/public/images/vpn-ddns/cover.jpg"
+    "image": "/assets/img/WireGuard.png"
   }
 ]
