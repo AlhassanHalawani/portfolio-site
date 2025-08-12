@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+  <!-- Pixel-Tech theme assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/pixel-tech.css">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WireGuard + Dynamic DNS: practical tips — Alhassan</title>
@@ -19,6 +26,19 @@
         <img loading="lazy" src="/assets/img/WireGuard.png" alt="WireGuard">
       </div>
       <p class="reveal">A few notes on keeping your VPN reachable even as your public IP rotates…</p>
+      <p class="reveal">Here are the small things that make a big difference when you rely on <strong>WireGuard</strong> at home while your WAN IP changes.</p>
+      <h2 class="reveal">1) Use a DDNS that you control</h2>
+      <p class="reveal">I use a tiny script with the Cloudflare API that updates an A record whenever my public IP changes. Any equivalent will do—just make it cron‑friendly and idempotent.</p>
+      <h2 class="reveal">2) Endpoint = hostname, not IP</h2>
+      <pre class="reveal"><code>[Peer]
+Endpoint = vpn.example.com:51820
+PersistentKeepalive = 25</code></pre>
+      <h2 class="reveal">3) MTU, MTU, MTU</h2>
+      <p class="reveal">Start with 1420, test, then go lower if you see fragmentation. Mobile networks often like 1280.</p>
+      <h2 class="reveal">4) Health checks</h2>
+      <p class="reveal">Export <code>wg show</code> to Prometheus or push a tiny heartbeat to a monitoring endpoint so you actually notice when the tunnel dies.</p>
+      <h2 class="reveal">5) Bonus: k3s + WG</h2>
+      <p class="reveal">Expose the Kubernetes API only over WireGuard. Your future self will sleep better.</p>
       <p class="reveal"><a class="chip" href="/pages/blog.html">← Back to Blog</a></p>
     </article>
   </main>

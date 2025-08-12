@@ -1,19 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+  <!-- Pixel-Tech theme assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/pixel-tech.css">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Getting started with k3s on Raspberry Pi 5 — Alhassan</title>
   <meta name="description" content="k3s on Pi 5 with Ingress and cert-manager." />
 
-  <link rel="canonical" href="https://YOUR_DOMAIN_HERE/blog/hello-k3s.html" />
+  <link rel="canonical" href="https://YOUR_DOMAIN_HERE/blogs/hello-k3s.html" />
   <link rel="manifest" href="/public/manifest.webmanifest">
   <meta name="theme-color" content="#0b0d10">
 
   <meta property="og:title" content="Getting started with k3s on Raspberry Pi 5 — Alhassan" />
   <meta property="og:description" content="Install k3s, add Nginx Ingress, and wire cert-manager with Cloudflare." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://YOUR_DOMAIN_HERE/blog/hello-k3s.html" />
+  <meta property="og:url" content="https://YOUR_DOMAIN_HERE/blogs/hello-k3s.html" />
   <meta property="og:image" content="https://YOUR_DOMAIN_HERE/assets/img/kub.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -29,7 +36,7 @@
     "headline":"Getting started with k3s on Raspberry Pi 5",
     "datePublished":"2025-08-01",
     "author":{"@type":"Person","name":"Alhassan Halawani"},
-    "mainEntityOfPage":{"@type":"WebPage","@id":"https://YOUR_DOMAIN_HERE/blog/hello-k3s.html"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://YOUR_DOMAIN_HERE/blogs/hello-k3s.html"},
     "image":"https://YOUR_DOMAIN_HERE/assets/img/kub.png",
     "description":"Notes for installing k3s on a Pi 5 cluster and exposing services via Nginx Ingress with cert-manager."
   }
@@ -45,6 +52,25 @@
         <img loading="lazy" src="/assets/img/kub.png" alt="k3s">
       </div>
       <p class="reveal">These are quick notes for installing k3s on a Pi 5 cluster and exposing services via Nginx Ingress with cert-manager…</p>
+      <p class="reveal">This is my no-fluff way to get a Pi 5 cluster running <strong>k3s</strong> with a proper Ingress, TLS from Cloudflare, and a sane GitOps flow. It’s opinionated and repeatable.</p>
+      <h2 class="reveal">1) Base OS and prerequisites</h2>
+      <ul class="reveal">
+        <li>Flash Raspberry Pi OS 64‑bit (Lite) and enable SSH. Set a static DHCP lease on your router.</li>
+        <li>Update firmware: <code>sudo rpi-eeprom-update -a</code> then <code>sudo reboot</code>.</li>
+        <li>Harden SSH: disable password auth, add your key, and change the default user.</li>
+      </ul>
+      <h2 class="reveal">2) Install k3s (server)</h2>
+      <pre class="reveal"><code>curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable traefik</code></pre>
+      <p class="reveal">Grab the node token for future agents: <code>/var/lib/rancher/k3s/server/node-token</code>.</p>
+      <h2 class="reveal">3) Join agents</h2>
+      <pre class="reveal"><code>K3S_URL=https://&lt;server-ip&gt;:6443 K3S_TOKEN=&lt;token&gt; curl -sfL https://get.k3s.io | sh -</code></pre>
+      <h2 class="reveal">4) Nginx Ingress + cert-manager</h2>
+      <pre class="reveal"><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.3/cert-manager.yaml</code></pre>
+      <p class="reveal">Create a ClusterIssuer for Cloudflare DNS01 and you’re golden.</p>
+      <h2 class="reveal">5) GitOps</h2>
+      <p class="reveal">Use a repo with <code>apps/</code> manifests and a CI job that runs <code>kubectl apply -k</code> against your cluster through a WireGuard tunnel.</p>
+      <p class="reveal">If you want me to open‑source my manifests, ping me.</p>
       <p class="reveal"><a class="chip" href="/pages/blog.html">← Back to Blog</a></p>
     </article>
   </main>
