@@ -12,6 +12,10 @@ COPY ./*.html /usr/share/nginx/html/
 # Copy the projects subpages and shared assets
 COPY projects/ /usr/share/nginx/html/projects/
 COPY assets/ /usr/share/nginx/html/assets/
+COPY pages/ /usr/share/nginx/html/pages/
+COPY blogs/ /usr/share/nginx/html/blogs/
+COPY public/ /usr/share/nginx/html/public/
+COPY sw.js /usr/share/nginx/html/sw.js
 
 # Misc
 COPY robots.txt /usr/share/nginx/html/robots.txt
