@@ -1,39 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
-    field.cattle.io/publicEndpoints: '[{"addresses":["192.168.115.139","192.168.115.140","192.168.115.141","192.168.115.142"],"port":443,"protocol":"HTTPS","serviceName":"portfolio:portfolio","ingressName":"portfolio:portfolio","hostname":"portfolio.halawani.info","path":"/","allNodes":false}]'
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"cert-manager.io/cluster-issuer":"letsencrypt-cloudflare","kubernetes.io/ingress.class":"nginx"},"name":"portfolio","namespace":"portfolio"},"spec":{"rules":[{"host":"portfolio.halawani.info","http":{"paths":[{"backend":{"service":{"name":"portfolio","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}],"tls":[{"hosts":["portfolio.halawani.info"],"secretName":"portfolio-tls"}]}}
-    kubernetes.io/ingress.class: nginx
-  creationTimestamp: "2025-08-09T13:16:20Z"
-  generation: 2
   name: portfolio
   namespace: portfolio
-  resourceVersion: "14972671"
-  uid: a89eb09b-5769-4486-8416-e545d6a37dd7
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-cloudflare
 spec:
-  ingressClassName: traefik
+  ingressClassName: nginx
   rules:
   - host: portfolio.halawani.info
     http:
       paths:
-      - backend:
+      - path: /
+        pathType: Prefix
+        backend:
           service:
             name: portfolio
             port:
               number: 80
-        path: /
-        pathType: Prefix
   tls:
   - hosts:
     - portfolio.halawani.info
     secretName: portfolio-tls
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.168.115.139
-    - ip: 192.168.115.140
-    - ip: 192.168.115.141
-    - ip: 192.168.115.142

@@ -73,7 +73,7 @@ document.addEventListener("click", (e) => {
 // --- NEW: Register Service Worker for PWA + offline
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js", { scope: "/" })
+    (()=>{const base=document.querySelector("base")?.href||location.pathname;const swUrl=new URL("sw.js",base).pathname;const scope=new URL(".",base).pathname;navigator.serviceWorker.register(swUrl,{scope});})()
       .catch(err => console.warn("SW register failed:", err));
   });
 }
