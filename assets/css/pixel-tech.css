@@ -339,7 +339,7 @@ body.theme-auto { /* inherits dark tokens from :root by default */ }
 
 /* --- Theme toggle switch --- */
 .theme-toggle{
-  position: relative; width: 56px; height: 28px;
+  position: relative; width: 60px; height: 31px;
   border: 2px solid var(--border); border-radius: 999px;
   background: color-mix(in srgb, var(--card) 85%, transparent);
   display: inline-flex; align-items: center; justify-content: center;
