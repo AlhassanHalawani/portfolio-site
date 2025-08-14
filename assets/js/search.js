@@ -1,48 +1,30 @@
-(async () => {
+/* Simple search page logic */
+(() => {
   const q = document.getElementById("q");
-  const out = document.getElementById("results");
-  if (!q || !out) return;
+  const results = document.getElementById("results");
+  if (!q || !results) return;
 
-  // fetch data sources
-  const [projects, posts] = await Promise.all([
-    fetch("/data/projects.json").then(r => r.json()).catch(() => []),
-    fetch("/data/posts.json").then(r => r.json()).catch(() => [])
-  ]);
+  const idxEl = document.getElementById("searchIndex");
+  const index = idxEl ? JSON.parse(idxEl.textContent || "[]") : [];
 
-  function render(list) {
-    out.innerHTML = list.map(item => `
+  const norm = s => (s || "").toLowerCase().trim();
+  function render(list){
+    if (!list.length){ results.innerHTML = `<p>No results.</p>`; return; }
+    results.innerHTML = list.map(i => `
       <article class="card">
-        <a class="card-media" href="${item.url}">
-          <img loading="lazy" src="${item.image || '/public/images/placeholder.jpg'}" alt="${item.title}">
-        </a>
-        <div class="card-body">
-          <h3><a href="${item.url}">${item.title}</a></h3>
-          <p class="muted">${item.type} ${item.year ? "· " + item.year : ""} ${item.tags ? "· " + item.tags.join(", ") : ""}</p>
-          <p>${item.summary || ""}</p>
-          <a class="btn" href="${item.url}">Open</a>
-        </div>
+        <h3 class="card-title"><a href="${i.url}">${i.title}</a></h3>
+        <p class="card-text">${i.summary || ""}</p>
+        ${i.tags ? `<div class="chipbar">${i.tags.map(t => `<span class='chip'>${t}</span>`).join('')}</div>` : ""}
       </article>
     `).join("");
   }
 
-  // Build a unified index
-  const index = [
-    ...projects.map(p => ({ ...p, type: "project" })),
-    ...posts.map(p => ({ ...p, type: "post" }))
-  ];
-
-  const norm = s => (s || "").toLowerCase();
-
-  function apply() {
+  function apply(){
     const term = norm(q.value);
-    if (!term) { render(index); return; }
-    const r = index.filter(i => {
-      const hay = norm(`${i.title} ${i.summary} ${(i.tags||[]).join(" ")} ${i.stack||[]}`);
-      return hay.includes(term);
-    });
-    render(r);
+    if (!term){ render(index); return; }
+    const out = index.filter(i => norm(`${i.title} ${i.summary} ${(i.tags||[]).join(' ')} ${(i.stack||[]).join(' ')}`).includes(term));
+    render(out);
   }
-
   q.addEventListener("input", apply);
   render(index);
 })();
