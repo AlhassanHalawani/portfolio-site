@@ -4,15 +4,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Theme toggle is initialized in layout.js AFTER header injection.
 
-// Mobile menu toggle
-const burger = document.getElementById("burger");
-const navLinks = document.getElementById("navLinks");
-if (burger && navLinks) {
-  burger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-    burger.setAttribute("aria-expanded", navLinks.classList.contains("open"));
-  });
-}
+// Mobile menu toggle (handled by layout.js after header injection)
 
 // Active link based on current page (kept for non-partial pages)
 (function setActive() {

@@ -8,9 +8,6 @@
   --card:#12161c;
   --border:#1b2330;
 }
-
-
-}
 body.theme-light { --bg:#f8fafc; --bg2:#ffffff; --text:#0b1020; --muted:#5b6470; --card:#ffffff; --border:#e6eaf0; }
 body.theme-dark  { /* keep defaults */ }
 
@@ -194,4 +191,74 @@ html { scroll-behavior: smooth }
 @media (max-width:720px){
   .proj-controls{flex-direction:column; align-items:stretch}
   .search input{width:100%}
+}
+
+/* Language toggle */
+.language-toggle{
+  background:transparent; 
+  border:1px solid var(--border); 
+  border-radius:12px; 
+  padding:.5rem .75rem; 
+  cursor:pointer;
+  color:var(--text);
+  font-family:'Handjet', monospace;
+  font-weight:500;
+  font-size:14px;
+  transition:background .2s ease, transform .2s ease;
+}
+.language-toggle:hover{
+  background:color-mix(in srgb, var(--card) 80%, transparent);
+  transform:translateY(-1px);
+}
+.language-toggle .lang-text{
+  display:inline-block;
+  transition:transform .3s ease;
+}
+
+/* RTL support */
+.rtl-mode{
+  direction:rtl;
+  text-align:right;
+}
+.rtl-mode *{
+  font-family:'Handjet', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.rtl-mode .nav{
+  grid-template-columns:1fr auto 1fr;
+}
+.rtl-mode .nav-center{
+  justify-self:center;
+}
+.rtl-mode .nav-right{
+  justify-self:start;
+  flex-direction:row-reverse;
+}
+.rtl-mode .nav-links{
+  flex-direction:row-reverse;
+}
+.rtl-mode .hero{
+  grid-template-columns:.8fr 1.2fr;
+}
+.rtl-mode .cta{
+  flex-direction:row-reverse;
+  justify-content:flex-end;
+}
+.rtl-mode .grid{
+  direction:rtl;
+}
+.rtl-mode .card{
+  text-align:right;
+}
+.rtl-mode .proj-controls{
+  flex-direction:row-reverse;
+}
+.rtl-mode .chipbar{
+  flex-direction:row-reverse;
+}
+
+@media (max-width: 780px){
+  .rtl-mode .nav-links{
+    right:auto;
+    left:1rem;
+  }
 }
