@@ -31,9 +31,19 @@
 
     <section class="section">
       <h2 class="section-title reveal">Projects</h2>
+      
+      <!-- General Search -->
+      <div class="proj-controls reveal" style="margin-bottom: 2rem;" role="region" aria-label="General search">
+        <h3 class="reveal">Search Everything</h3>
+        <label class="search reveal" style="display:block;max-width:520px">
+          <input type="search" id="q" placeholder="Search projects & posts…" aria-label="Search site">
+        </label>
+        <div id="results" class="grid" style="margin-top:1rem"></div>
+      </div>
 
       <!-- Filter/Search Bar -->
       <div class="proj-controls reveal" role="region" aria-label="Project filters">
+        <h3 class="reveal">Filter Projects</h3>
         <div class="chipbar" role="tablist" aria-label="Filter by tag">
           <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
           <button class="chip" data-filter="k3s" role="tab">k3s</button>
@@ -102,5 +112,6 @@
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/projects-filter.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
 </body>
 </html>
